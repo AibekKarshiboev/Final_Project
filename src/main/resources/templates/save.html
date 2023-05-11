@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/post}" method="post">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name </label>
+        <input type="text" class="form-control" name="name">
+    </div>
+    <div class="mb-3">
+        <label for="weight" class="form-label">weight </label>
+        <input type="text" class="form-control" name="weight">
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price </label>
+        <input type="text" class="form-control" name="price">
+    </div>
+    <div class="mb-3">
+        <label for="time" class="form-label">time </label>
+        <input type="text" class="form-control" name="time">
+    </div>
+
+    <center><button type="submit" class="btn btn-primary">Submit</button></center>
+
+</form>
+
+</body>
+</html>
