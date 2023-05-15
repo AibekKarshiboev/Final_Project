@@ -1,13 +1,13 @@
-package com.example.final_project;
+package kg.alatoo.demooauth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FinalProjectApplication {
+public class DemoOauthApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FinalProjectApplication.class, args);
+        SpringApplication.run(DemoOauthApplication.class, args);
     }
 
 }

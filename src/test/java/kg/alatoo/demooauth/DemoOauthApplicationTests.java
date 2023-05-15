@@ -1,10 +1,10 @@
-package com.example.final_project;
+package kg.alatoo.demooauth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FinalProjectApplicationTests {
+class DemoOauthApplicationTests {
 
     @Test
     void contextLoads() {
