@@ -18,7 +18,7 @@ public class Swagger {
 
     @GetMapping("/products")
     public List<Products> getAllPtoducts(){
-        return productRepository.findAll();
+        return productRepository.findByOrderByIdAsc();
     }
     @GetMapping("/product/{id}")
     public Optional<Products> getProductById(@PathVariable("id") Long id){
@@ -35,6 +35,6 @@ public class Swagger {
         return productRepository.save(products);
     }
 
-    
+
 
 }

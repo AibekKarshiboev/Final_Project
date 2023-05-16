@@ -16,6 +16,7 @@ import java.util.Optional;
 
 @Controller
 public class ProductController {
+    @Autowired
     EmailSenderService senderService;
 
     @Autowired
@@ -23,7 +24,7 @@ public class ProductController {
     List<String> listSort = new ArrayList<>();
 
 
-    @RequestMapping("/products")
+    @RequestMapping(path = "/products")
     public String products(Model model, String keyword){
         listSort.clear();
         listSort.add("By Id Asc");listSort.add("By Id Desc");listSort.add("By Name Asc");
@@ -69,7 +70,7 @@ public class ProductController {
     @PostMapping("/product/{id}")
     public String postProduct(@ModelAttribute Send adress, Model model){
         Optional<Products> product = productRepository.findById(adress.getProduct_id());
-        senderService.sendEmail(adress.getEmail().toString(), adress.getAdress(), adress.getPhone_number(), adress.getProduct_id());
+        senderService.sendEmail(adress.getEmail().toString(), adress.getAddress(), adress.getPhone_number(), adress.getProduct_id());
         return "check";
 
     }

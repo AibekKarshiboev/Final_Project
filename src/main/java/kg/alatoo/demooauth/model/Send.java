@@ -6,6 +6,6 @@ import lombok.Data;
 public class Send {
     Long product_id;
 
-    String adress, email, phone_number;
+    String address, email, phone_number;
 
 }
