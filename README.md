@@ -74,9 +74,11 @@ Im goind to test it
 
 ![image](https://github.com/AibekKarshiboev/Final_Project/assets/81102375/7f4d5214-2d56-4b58-9069-fc963cd0cd7c)
 
-
-
-
-
-
-
+```properties
+spring_profiles_active=prod
+PROD_DB_HOST=containers-us-west-21.railway.app
+PROD_DB_PORT=7304
+PROD_DB_NAME=railway
+PROD_DB_USERNAME=postgres
+PROD_DB_PASSWORD=rJlMOEIpCxYp25p7iVdI
+```
