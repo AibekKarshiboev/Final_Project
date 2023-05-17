@@ -14,11 +14,11 @@
     You have been logged out.
 </div>
 <form th:action="@{/register}" method="post">
-    <div><label> first name : <input type="text" name="firstname" th:value="${user.firstname}" readonly/> </label></div>
-    <div><label> Lastname Name : <input type="text" name="lastname" th:value="${user.lastname}"readonly/> </label></div>
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Email : <input type="email" name="email" th:value="${user.email}" readonly/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><label> first name : <input type="text" name="firstname" th:value="${user.firstname}" required readonly/> </label></div>
+    <div><label> Lastname Name : <input type="text" name="lastname" th:value="${user.lastname}" required readonly/> </label></div>
+    <div><label> User Name : <input type="text" name="username" required/> </label></div>
+    <div><label> Email : <input type="email" name="email" th:value="${user.email}" required readonly/> </label></div>
+    <div><label> Password: <input type="password" name="password" required/> </label></div>
     <div><input type="submit" value="Register"/></div>
 </form>
 

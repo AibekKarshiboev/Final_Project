@@ -3,6 +3,7 @@ package kg.alatoo.demooauth.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
@@ -23,11 +24,13 @@ public class SecurityConfig {
                                 .requestMatchers("/","/login**", "/register", "/about").permitAll()
                                 .anyRequest().authenticated()
                 )
-                .formLogin().loginPage("/login").permitAll().and()
+                .formLogin().loginPage("/login")
+                .defaultSuccessUrl("/")
+                .permitAll().and()
                .oauth2Login(oauth -> oauth
 
                         .loginPage("/login")
-                       .defaultSuccessUrl("/oauthRegister")
+                       .defaultSuccessUrl("/")
                 )
                 .logout()
                 .logoutUrl("/logout")

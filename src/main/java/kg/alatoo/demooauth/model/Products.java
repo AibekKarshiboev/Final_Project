@@ -19,3 +19,9 @@ public class Products {
 
 
 }
+/*spring.datasource.name=postgres
+        spring.datasource.url=jdbc:postgresql://${PROD_DB_HOST}:${PROD_DB_PORT}/${PROD_DB_NAME}
+        spring.datasource.username=${PROD_DB_USERNAME}
+        spring.datasource.password=${PROD_DB_PASSWORD}
+        spring.jpa.hibernate.ddl-auto=update
+        spring.sql.init.mode=always*/

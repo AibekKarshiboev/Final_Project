@@ -9,7 +9,6 @@ import kg.alatoo.demooauth.repo.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -17,12 +16,10 @@ import java.util.Optional;
 @Service
 public class CustomUserDetailsService implements UserDetailsService, UserService {
     private final UserRepository userRepository;
-    private final PasswordEncoder encoder;
     private final RoleRepository roleRepository;
 
-    public CustomUserDetailsService(UserRepository userRepository, PasswordEncoder encoder, RoleRepository roleRepository) {
+    public CustomUserDetailsService(UserRepository userRepository, RoleRepository roleRepository) {
         this.userRepository = userRepository;
-        this.encoder = encoder;
         this.roleRepository = roleRepository;
     }
 
@@ -40,7 +37,9 @@ public class CustomUserDetailsService implements UserDetailsService, UserService
     private User createUserWithRole(User newUser, String roleName) {
         //TODO: check for already existence username, if the user with username already exists throw Exception
         newUser.setId(null);
+/*
         newUser.setPassword(encoder.encode(newUser.getPassword()));
+*/
         newUser.getRoles().add(getOrCreateRole(roleName));
         return userRepository.save(newUser);
 
